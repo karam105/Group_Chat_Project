@@ -31,7 +31,7 @@ public class ClientHandler implements Runnable
 				String client_text = client_input.readLine();
 				if (client_text != null)
 				{
-					System.out.println("Received: " + clientText);
+					System.out.println("Received: " + client_text);
 
 					for (Socket s : socket_list)
 					{
