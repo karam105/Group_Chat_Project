@@ -38,7 +38,7 @@ public class ClientHandler implements Runnable
 						if (s != connection_socket)
 						{
 							DataOutputStream client_output = new DataOutputStream(s.getOutputStream());
-							clientOutput.writeBytes(client_text + "\n");
+							client_output.writeBytes(client_text + "\n");
 						}
 					}
 				}
