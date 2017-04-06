@@ -57,7 +57,7 @@ public class ClientHandler implements Runnable
 		{
 			System.out.println("Error: " + e.toString());
 			// Remove from arraylist
-			socket_list.remove(connectionSock);
+			socket_list.remove(connection_socket);
 		}
 	}
 }
