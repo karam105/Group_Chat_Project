@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class ClientHandler implements Runnable
 {
@@ -33,6 +35,11 @@ public class ClientHandler implements Runnable
 
 			while (true)
 			{
+				//Get timestamps for user text
+
+				Calendar cal = Calendar.getInstance();
+				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+
 				if (client_text != null)
 				{
 					System.out.println("Received: " + client_text);
@@ -44,7 +51,7 @@ public class ClientHandler implements Runnable
 						{
 							DataOutputStream client_output = new DataOutputStream(s.getOutputStream());
 							String name = username_list.get(i);
-							client_output.writeBytes(name+ " " +client_text + "\n");
+							client_output.writeBytes(sdf.format(cal.getTime())+ " " +name+ " " +client_text + "\n");
 						}
 						++i;
 					}
