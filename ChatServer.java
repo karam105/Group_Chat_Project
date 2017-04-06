@@ -10,10 +10,12 @@ public class ChatServer
 {
 
 	private ArrayList<Socket> socket_list;
+	private ArrayList<String> username_list;
 
 	public ChatServer()
 	{
 		socket_list = new ArrayList<Socket>();
+		username_list = new ArrayList<String>();
 	}
 
 	private void getConnection()
@@ -26,11 +28,11 @@ public class ChatServer
 
 			while (true)
 			{
-        Socket connection_socket = server_socket.accept();
+        		Socket connection_socket = server_socket.accept();
 
 				socket_list.add(connection_socket);
 
-				ClientHandler handler = new ClientHandler(connection_socket, this.socket_list);
+				ClientHandler handler = new ClientHandler(connection_socket, this.socket_list, this.username_list);
 				Thread thread = new Thread(handler);
 				thread.start();
 			}

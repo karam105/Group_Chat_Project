@@ -20,6 +20,7 @@ public class ChatClient
 			DataOutputStream server_output = new DataOutputStream(connection_socket.getOutputStream());
 
 			System.out.println("Connection made.");
+			System.out.println("What is your username? ")
 
 			ClientListener listener = new ClientListener(connection_socket);
 			Thread thread = new Thread(listener);

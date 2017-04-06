@@ -10,11 +10,13 @@ public class ClientHandler implements Runnable
 {
 	private Socket connection_socket = null;
 	private ArrayList<Socket> socket_list;
+	private ArrayList<String> username_list;
 
 	ClientHandler(Socket socket, ArrayList<Socket> socket_list)
 	{
 		this.connection_socket = socket;
 		this.socket_list = socket_list;
+		this.username_list = username_list;
 	}
 
 	public void run()
@@ -25,21 +27,26 @@ public class ClientHandler implements Runnable
 			System.out.println("Connection made with socket " + connection_socket);
 			BufferedReader client_input = new BufferedReader(
 				new InputStreamReader(connection_socket.getInputStream()));
+			
+			String client_text = client_input.readLine();
+			username_list.add(client_text);
+
 			while (true)
 			{
-
-				String client_text = client_input.readLine();
 				if (client_text != null)
 				{
-					System.out.println("Received: " + clientText);
+					System.out.println("Received: " + client_text);
+					int i = 0;
 
 					for (Socket s : socket_list)
 					{
 						if (s != connection_socket)
 						{
 							DataOutputStream client_output = new DataOutputStream(s.getOutputStream());
-							clientOutput.writeBytes(client_text + "\n");
+							String name = username_list.get(i);
+							clientOutput.writeBytes(name+ " " +client_text + "\n");
 						}
+						++i;
 					}
 				}
 				else
