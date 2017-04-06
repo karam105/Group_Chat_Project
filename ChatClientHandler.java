@@ -44,7 +44,7 @@ public class ClientHandler implements Runnable
 						{
 							DataOutputStream client_output = new DataOutputStream(s.getOutputStream());
 							String name = username_list.get(i);
-							clientOutput.writeBytes(name+ " " +client_text + "\n");
+							client_output.writeBytes(name+ " " +client_text + "\n");
 						}
 						++i;
 					}
@@ -64,7 +64,7 @@ public class ClientHandler implements Runnable
 		{
 			System.out.println("Error: " + e.toString());
 			// Remove from arraylist
-			socketList.remove(connectionSock);
+			socket_list.remove(connection_socket);
 		}
 	}
 }
