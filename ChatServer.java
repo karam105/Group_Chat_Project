@@ -29,8 +29,12 @@ public class ChatServer
 			while (true)
 			{
         		Socket connection_socket = server_socket.accept();
-
 				socket_list.add(connection_socket);
+
+				BufferedReader client_input = new BufferedReader(
+						new InputStreamReader(connection_socket.getInputStream()));
+				String client_text = client_input.readLine();
+				username_list.add(client_text);
 
 				ClientHandler handler = new ClientHandler(connection_socket, this.socket_list, this.username_list);
 				Thread thread = new Thread(handler);

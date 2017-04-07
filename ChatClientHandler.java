@@ -27,16 +27,10 @@ public class ClientHandler implements Runnable
 		try
 		{
 			System.out.println("Connection made with socket " + connection_socket);
-			BufferedReader client_input = new BufferedReader(
-				new InputStreamReader(connection_socket.getInputStream()));
-			
-			String client_text = client_input.readLine();
-			username_list.add(client_text);
 
 			while (true)
 			{
 				//Get timestamps for user text
-
 				Calendar cal = Calendar.getInstance();
 				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 
@@ -62,7 +56,8 @@ public class ClientHandler implements Runnable
 				  System.out.println("Closing connection for socket " + connection_socket);
 
 				  socket_list.remove(connection_socket);
-				  connection_socket.close();
+					username_list.remove()
+					connection_socket.close();
 				  break;
 				}
 			}
