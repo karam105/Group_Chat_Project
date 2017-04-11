@@ -52,6 +52,7 @@ public class ChatClientHandler implements Runnable
 							String name = username_list.get(i);
 							client_output.writeBytes(sdf.format(cal.getTime())+ " " +name+ " " +client_text + "\n");
 						}
+
 						++i;
 					}
 				}
