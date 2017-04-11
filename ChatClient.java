@@ -22,7 +22,7 @@ public class ChatClient
 			System.out.println("Connection made.");
 			System.out.println("What is your username? ");
 
-			ClientListener listener = new ClientListener(connection_socket);
+			ChatClientListener listener = new ChatClientListener(connection_socket);
 			Thread thread = new Thread(listener);
 			thread.start();
 

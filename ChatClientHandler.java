@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class ClientHandler implements Runnable
+public class ChatClientHandler implements Runnable
 {
 	private Socket connection_socket = null;
 	private ArrayList<Socket> socket_list;
 	private ArrayList<String> username_list;
 
-	ClientHandler(Socket socket, ArrayList<Socket> socket_list)
+	ChatClientHandler(Socket socket, ArrayList<Socket> socket_list, ArrayList<String> username_list)
 	{
 		this.connection_socket = socket;
 		this.socket_list = socket_list;

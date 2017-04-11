@@ -36,7 +36,7 @@ public class ChatServer
 				String client_text = client_input.readLine();
 				username_list.add(client_text);
 
-				ClientHandler handler = new ClientHandler(connection_socket, this.socket_list, this.username_list);
+				ChatClientHandler handler = new ChatClientHandler(connection_socket, this.socket_list, this.username_list);
 				Thread thread = new Thread(handler);
 				thread.start();
 			}

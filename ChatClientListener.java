@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class ClientListener implements Runnable
+public class ChatClientListener implements Runnable
 {
 	private Socket connection_socket = null;
 
-	ClientListener(Socket socket)
+	ChatClientListener(Socket socket)
 	{
 		this.connection_socket = socket;
 	}
