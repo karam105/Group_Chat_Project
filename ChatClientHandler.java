@@ -61,7 +61,7 @@ public class ChatClientHandler implements Runnable
 				  System.out.println("Closing connection for socket " + connection_socket);
 
 				  socket_list.remove(connection_socket);
-					username_list.remove();
+					username_list.remove(name);
 					connection_socket.close();
 				  break;
 				}
