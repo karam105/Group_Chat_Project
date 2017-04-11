@@ -49,7 +49,6 @@ public class ChatClientHandler implements Runnable
 						if (s != connection_socket)
 						{
 							DataOutputStream client_output = new DataOutputStream(s.getOutputStream());
-							String name = username_list.get(i);
 							client_output.writeBytes(sdf.format(cal.getTime())+ " " +name+ " " +client_text + "\n");
 						}
 
