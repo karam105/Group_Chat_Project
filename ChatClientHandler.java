@@ -27,8 +27,8 @@ public class ChatClientHandler implements Runnable
 		try
 		{
 			System.out.println("Connection made with socket " + connection_socket);
-			int s = username_list.size();
-			String name = username_list.get(s-1);
+			int m = username_list.size();
+			String name = username_list.get(m-1);
 			while (true)
 			{
 				//Get timestamps for user text
