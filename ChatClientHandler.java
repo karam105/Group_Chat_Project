@@ -35,6 +35,10 @@ public class ChatClientHandler implements Runnable
 				Calendar cal = Calendar.getInstance();
 				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 
+				BufferedReader client_input = new BufferedReader(
+						new InputStreamReader(connection_socket.getInputStream()));
+				String client_text = client_input.readLine();
+
 				if (client_text != null)
 				{
 					System.out.println("Received: " + client_text);
