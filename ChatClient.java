@@ -30,7 +30,7 @@ public class ChatClient
 			while (true)
 			{
 				String data = keyboard.nextLine();
-				server_out.writeBytes(data + "\n");
+				server_output.writeBytes(data + "\n");
 			}
 		}
 		catch (IOException e)
