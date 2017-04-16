@@ -33,7 +33,7 @@ class User{
 
     if (name.length() == this.username.length()){
       for (int i = 0; i < this.username.length(); i++){
-        if (name[i] != this.username[i]){
+        if (name.charAt(i) != this.username.charAt(i)){
           // entry does not match
           return false;
         }
@@ -52,7 +52,7 @@ class User{
 
     if (pass.length() == this.password.length()){
       for (int i = 0; i < this.password.length(); i++){
-        if (pass[i] != this.password[i]){
+        if (pass.charAt(i) != this.password.charAt(i)){
           return false;
         }
       }
