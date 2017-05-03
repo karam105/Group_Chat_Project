@@ -12,7 +12,7 @@ public class ChatClient
 	{
 		try
 		{
-			String hostname = "10.49.139.247";
+			String hostname = "localhost";
 			int port = 7654;
 
 			System.out.println("Connecting to server on port " + port);
