@@ -160,12 +160,12 @@ public class Client extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
-
+// get message
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jTextArea1.append(jTextField3.getText() + ": " + jTextField1.getText() + "\n");
         jTextField1.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
-
+// get username
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jTextField3.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
