@@ -6,6 +6,10 @@
 package my.chatui;
 
 import java.awt.Button;
+import java.net.Socket;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.UnknownHostException;
 
 /**
  *
@@ -13,15 +17,35 @@ import java.awt.Button;
  */
 public class Client extends javax.swing.JFrame {
 
+  static Socket connection_socket;
+
     /**
      * Creates new form Client
      */
-    public Client() {
+    public Client() throws UnknownHostException, IOException {
         initComponents();
-        
+
         jButton1.setVisible(false);
         jButton2.setVisible(false);
         jTextField1.setVisible(false);
+
+        String hostname = "localhost";
+        int port = 7654;
+
+        connection_socket = new Socket(hostname, port);
+
+        try
+    	  {
+          ChatClientListener listener = new ChatClientListener(connection_socket);
+          Thread thread = new Thread(listener);
+          thread.start();
+
+        }
+        catch (Exception e)
+        {
+          System.out.println(e.getMessage());
+        }
+
     }
 
     /**
@@ -160,14 +184,32 @@ public class Client extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
 // get message
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jTextArea1.append(jTextField3.getText() + ": " + jTextField1.getText() + "\n");
+        try{
+          DataOutputStream server_output = new DataOutputStream(connection_socket.getOutputStream());
+          String data = jTextField1.getText();
+          server_output.writeBytes(data + "\n");
+        }
+        catch(Exception e){
+          System.out.println(e.getMessage());
+        }
         jTextField1.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
+
 // get username
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField3.setText("");
+      try{
+        DataOutputStream server_output = new DataOutputStream(connection_socket.getOutputStream());
+        String data = jTextField3.getText();
+        server_output.writeBytes(data + "\n");
+      }
+      catch(Exception e){
+        System.out.println(e.getMessage());
+      }
+      jTextField3.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -186,7 +228,7 @@ public class Client extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -209,7 +251,12 @@ public class Client extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+              try{
                 new Client().setVisible(true);
+              }
+              catch (Exception e){
+                System.out.println(e.getMessage());
+              }
             }
         });
     }
