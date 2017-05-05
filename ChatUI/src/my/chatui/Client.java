@@ -10,6 +10,7 @@ import java.net.Socket;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -268,7 +269,7 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables

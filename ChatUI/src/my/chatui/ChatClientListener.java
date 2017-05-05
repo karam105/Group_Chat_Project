@@ -29,7 +29,8 @@ public class ChatClientListener implements Runnable
 				String server_text = server_input.readLine();
 				if (server_input != null)
 				{
-					jTextArea1.append(server_text);
+					Client new_client = new Client();
+					new_client.jTextArea1.append(server_text);
 				}
 				else
 				{
