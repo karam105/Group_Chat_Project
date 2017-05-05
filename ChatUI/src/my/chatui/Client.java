@@ -188,7 +188,6 @@ public class Client extends javax.swing.JFrame {
 
 // get message
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jTextArea1.append(jTextField3.getText() + ": " + jTextField1.getText() + "\n");
         try{
           DataOutputStream server_output = new DataOutputStream(connection_socket.getOutputStream());
           String data = jTextField1.getText();
@@ -197,6 +196,7 @@ public class Client extends javax.swing.JFrame {
         catch(Exception e){
           System.out.println(e.getMessage());
         }
+        jTextArea1.append(jTextField3.getText() + ": " + jTextField1.getText() + "\n");
         jTextField1.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
