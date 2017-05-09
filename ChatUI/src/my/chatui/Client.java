@@ -30,7 +30,7 @@ public class Client extends javax.swing.JFrame {
         jButton2.setVisible(false);
         jTextField1.setVisible(false);
 
-        String hostname = "localhost";
+        String hostname = "192.168.174.1";
         int port = 7654;
 
         connection_socket = new Socket(hostname, port);
@@ -192,16 +192,21 @@ public class Client extends javax.swing.JFrame {
           DataOutputStream server_output = new DataOutputStream(connection_socket.getOutputStream());
           String data = jTextField1.getText();
           server_output.writeBytes(data + "\n");
+          jTextArea1.append(jTextField3.getText() + ": " + jTextField1.getText() + "\n");
         }
         catch(Exception e){
           System.out.println(e.getMessage());
         }
-        jTextArea1.append(jTextField3.getText() + ": " + jTextField1.getText() + "\n");
         jTextField1.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
-// get username
+// clear
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+      jTextField3.setText("");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+// get username
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
       try{
         DataOutputStream server_output = new DataOutputStream(connection_socket.getOutputStream());
         String data = jTextField3.getText();
@@ -210,10 +215,6 @@ public class Client extends javax.swing.JFrame {
       catch(Exception e){
         System.out.println(e.getMessage());
       }
-      jTextField3.setText("");
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         jButton1.setVisible(true);
         jButton2.setVisible(true);
         jTextField1.setVisible(true);
