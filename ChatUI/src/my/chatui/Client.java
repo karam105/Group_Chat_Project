@@ -30,7 +30,7 @@ public class Client extends javax.swing.JFrame {
         jButton2.setVisible(false);
         jTextField1.setVisible(false);
 
-        String hostname = "192.168.174.1";
+        String hostname = "localhost";
         int port = 7654;
 
         connection_socket = new Socket(hostname, port);
