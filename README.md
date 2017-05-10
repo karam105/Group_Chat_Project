@@ -7,13 +7,12 @@ This repo contains programs to implement an online chat server.
 * ChatClientHandler.java takes the client's message and sends to other clients
 * ChatClientListener.java gets and displays messages from the server
 
-<<<<<<< HEAD
-In ChatUI,
 
+In ChatUI,
 * within src/my/chatui, Client.java is the GUI for the chat form
 * the updated version where code from ChatClient.java is integrated is in new_branch
 * to get to new_branch, git clone the master repo and then git checkout new_branch
-=======
+
 # Instructions for Installing Necessary Components
 * We developed our GUI in NetBeans, which you can download [here](https://netbeans.org/downloads/)
 
@@ -21,12 +20,13 @@ In ChatUI,
 To run the server, be in the main directory
 * compile using javac *.java
 * execute using java ChatServer
+
 To run the command line chat client, be in the main directory
 * if you have already compiled, there is no need to repeat
 * execute using java ChatClient
 * you can open multiple command lines and instances of ChatClient
+
 To run the GUI, you must have the server running. Then,
 * open NetBeans
 * once in NetBeans, open the project, ChatUI
 * run by hitting the green triangle
->>>>>>> new_branch
