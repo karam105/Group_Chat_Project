@@ -1,3 +1,5 @@
+package my.chatui;
+
 import java.net.Socket;
 import java.io.DataOutputStream;
 import java.io.BufferedReader;
@@ -49,7 +51,7 @@ public class ChatClientHandler implements Runnable
 						if (s != connection_socket)
 						{
 							DataOutputStream client_output = new DataOutputStream(s.getOutputStream());
-							client_output.writeBytes(sdf.format(cal.getTime())+ " " +name+ ": " +client_text + "\n");
+							client_output.writeBytes(sdf.format(cal.getTime())+ " " +name+ " " +client_text + "\n");
 						}
 
 						++i;
