@@ -9,11 +9,6 @@ This repo contains programs to implement an online chat server.
 
 In ChatUI,
 * within src/my/chatui, Client.java is the GUI for the chat form
-* the updated version where code from ChatClient.java is integrated is in new_branch
-* to get to new_branch, git clone the master repo and then git checkout new_branch
-
-In ChatUI,
-* within src/my/chatui, Client.java is the GUI for the chat form
 
 
 # Instructions for Installing Necessary Components
