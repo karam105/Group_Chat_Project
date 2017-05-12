@@ -1,4 +1,4 @@
 My contributions to the project so far are:
 
-beginning and working on the GUI for the application.
-fix typos
+working and designing the GUI for the application.
+Integrated the ChatClient.java fiel into the Client.java form to send messages to the server
